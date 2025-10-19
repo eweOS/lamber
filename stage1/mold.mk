@@ -21,4 +21,6 @@ $W/stage1.mold: $W/stage1.mold.extract \
 	+ $(call s1) cmake --build $W/mold-build
 	+ $(call s1) DESTDIR="$O" cmake --install $W/mold-build
 
+	ln -s ld.mold $O/usr/bin/ld
+
 	$(call done)
