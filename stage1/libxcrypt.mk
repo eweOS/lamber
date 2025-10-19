@@ -18,4 +18,6 @@ $W/stage1.libxcrypt: $W/stage1.libxcrypt.extract \
 	+ $(call s1) make -C $W/libxcrypt-$(XCRYPT_V)
 	+ $(call s1) make -C $W/libxcrypt-$(XCRYPT_V) install DESTDIR="$O"
 
+	rm "$O"/usr/lib/libcrypt.la
+
 	$(call done)
