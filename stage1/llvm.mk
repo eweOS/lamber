@@ -8,6 +8,9 @@ $W/stage1.binutils.extract: $W/BINUTILS.download
 	tar xf $W/$(BINUTILS_FILE) -C $W
 	$(call done)
 
+# We want to enable SPIR-V target as well, as spirv-llvm-translator must be
+# rebuilt when targets enabled for LLVM differ, and we don't want to build
+# LLVM again in stage2.
 $W/stage1.llvm: $W/stage1.llvm.extract $W/stage1.binutils.extract \
 	$W/stage1.cxx-runtime
 	$(call s1) cmake -S $W/llvm-project-llvmorg-$(LLVM_V)/llvm \
@@ -31,7 +34,7 @@ $W/stage1.llvm: $W/stage1.llvm.extract $W/stage1.binutils.extract \
 		-DLLVM_BUILD_LLVM_DYLIB=ON			\
 		-DLLVM_LINK_LLVM_DYLIB=ON			\
 		-DLLVM_INCLUDE_BENCHMARKS=OFF			\
-		-DLLVM_TARGETS_TO_BUILD=$(LLVMTARGET)		\
+		-DLLVM_TARGETS_TO_BUILD="$(LLVMTARGET);SPIRV"	\
 		-DLLVM_ENABLE_PER_TARGET_RUNTIME_DIR=OFF	\
 		-DLLVM_ENABLE_PROJECTS="clang;lld"		\
 		-DLLVM_BINUTILS_INCDIR="$(AW)/binutils-$(BINUTILS_V)/include"
