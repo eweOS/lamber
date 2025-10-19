@@ -36,6 +36,7 @@ $W/stage0: $W/stage0.llvm
 	$(call done)
 
 include stage1/*.mk
+include stage2/*.mk
 
 clean:
 	-rm -rf $O/*
