@@ -37,6 +37,11 @@ $W/stage0: $W/stage0.llvm
 
 include stage1/*.mk
 
+clean:
+	-rm -rf $O/*
+	-find $(AW) -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} ';'
+	-rm $(AW)/stage*
+
 ifeq ($(shell if test -d $O -a -d $W; then echo okay; fi),)
 $(error Please create $O and $W)
 endif
