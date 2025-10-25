@@ -16,19 +16,6 @@ $W/stage1.musl-headers: $W/stage0 $W/stage1.musl-extract
 
 	$(call done)
 
-$W/stage1.musl-stub: $W/stage1.musl-headers
-	mkdir -p $O/usr/lib
-	$(call s1) clang -xc /dev/null -o $O/usr/lib/libc.so \
-		-nostdlib -fPIC -shared
-
-	$(call s1) make -C $W/musl-$(MUSL_V) \
-		obj/crt/crt{1,i,n}.o
-
-	install -Dm644 $W/musl-$(MUSL_V)/obj/crt/crt{1,i,n}.o \
-		-t $O/usr/lib/
-
-	$(call done)
-
 $W/stage1.musl-lib: $W/stage1.musl-headers $W/stage1.compiler-rt
 	$(call s1) make -C $W/musl-$(MUSL_V) distclean
 
