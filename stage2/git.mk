@@ -3,7 +3,7 @@ $W/stage2.git.extract: $W/GIT.download
 
 	$(call done)
 
-GIT_FLAGS	:= INSTALL_SYMLINKS=1 NO_PERL_CPAN_FALLBACKS=1 USE_LIBPCRE2=1
+GIT_FLAGS	= INSTALL_SYMLINKS=1 NO_PERL_CPAN_FALLBACKS=1 USE_LIBPCRE2=1
 GIT_FLAGS	+= NO_REGEX=NeedsStartEnd CC=clang HOSTCC=clang
 GIT_FLAGS	+= prefix='/usr' gitexecdir='/usr/lib/git-core'
 GIT_FLAGS	+= perllibdir=$(shell perl -MConfig -wle 'print $$Config{installvendorlib}')
