@@ -9,7 +9,7 @@ $W/stage2.expat: $W/stage2.expat.extract $W/stage2.cmake
 		-DCMAKE_BUILD_TYPE=None		\
 		-W no-dev
 
-	cmake --build $W/build-expat
-	cmake --install $W/build-expat
+	+ cmake --build $W/build-expat
+	+ cmake --install $W/build-expat
 
 	$(call done)
