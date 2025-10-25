@@ -42,7 +42,9 @@ $W/stage1.llvm: $W/stage1.llvm.extract $W/stage1.binutils.extract \
 	+ $(call s1) cmake --build $W/llvm-stage1-build
 	+ $(call s1) DESTDIR="$O" cmake --install $W/llvm-stage1-build
 
-	ln -s clang "$O"/usr/bin/{cc,c89,c99}
+	ln -s clang "$O"/usr/bin/cc
+	ln -s clang "$O"/usr/bin/c89
+	ln -s clang "$O"/usr/bin/c99
 	ln -s clang++ "$O"/usr/bin/c++
 
 	$(call done)
