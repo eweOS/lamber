@@ -35,6 +35,8 @@ LIBARCHIVE_FILE	:= libarchive-$(LIBARCHIVE_V).tar.xz
 # 1.1.0
 LIBBZ2_COMMIT	:= 2d8393924b9f3e014000c7420c7da7c3ddb74e2c
 LIBBZ2_FILE	:= libbz2.tar.gz
+LIBEDIT_V	:= 20250104-3.1
+LIBEDIT_FILE	:= libedit-$(LIBEDIT_V).tar.gz
 LIBFFI_V	:= 3.5.2
 LIBFFI_FILE	:= libffi-$(LIBFFI_V).tar.gz
 LIBTOOL_V	:= 2.5.4
@@ -113,6 +115,7 @@ GIT_URL		:= https://www.kernel.org/pub/software/scm/git/$(GIT_FILE)
 HWLOC_URL	:= https://www.open-mpi.org/software/hwloc/v$(basename $(HWLOC_V))/downloads/$(HWLOC_FILE)
 LIBARCHIVE_URL	:= https://github.com/libarchive/libarchive/releases/download/v$(LIBARCHIVE_V)/$(LIBARCHIVE_FILE)
 LIBBZ2_URL	:= https://gitlab.com/bzip2/bzip2/-/archive/$(LIBBZ2_COMMIT)/bzip2-$(LIBBZ2_COMMIT).tar.gz
+LIBEDIT_URL	:= https://thrysoee.dk/editline/$(LIBEDIT_FILE)
 LIBTOOL_URL	:= https://ftpmirror.gnu.org/libtool/$(LIBTOOL_FILE)
 LIBFFI_URL	:= https://github.com/libffi/libffi/releases/download/v$(LIBFFI_V)/$(LIBFFI_FILE)
 LINUX_URL	:= https://cdn.kernel.org/pub/linux/kernel/v6.x/$(LINUX_FILE)
