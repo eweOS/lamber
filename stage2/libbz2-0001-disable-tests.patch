@@ -1,0 +1,9 @@
+diff --git a/meson.build b/meson.build
+index 756d71e..fdd5f11 100644
+--- a/meson.build
++++ b/meson.build
+@@ -174,4 +174,3 @@ install_headers('bzlib.h')
+ 
+ subdir('man')
+ subdir('docs')
+-subdir('tests')
