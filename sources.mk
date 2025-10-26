@@ -44,6 +44,7 @@ M4_V		:= 1.4.20
 M4_FILE		:= m4-$(M4_V).tar.xz
 MAKE_V		:= 4.4.1
 MAKE_FILE	:= make-$(MAKE_V).tar.gz
+MESON_V		:= 1.9.1
 MOLD_V		:= 2.40.4
 MOLD_FILE	:= mold-$(MOLD_V).tar.gz
 MPDECIMAL_V	:= 4.0.1
