@@ -27,9 +27,13 @@ $W/stage1.ncurses: $W/stage1.ncurses.extract $W/stage1.cxx-runtime
 
 	ln -s ncursesw.pc	$O/usr/lib/pkgconfig/ncurses.pc
 	ln -s ncurses++w.pc	$O/usr/lib/pkgconfig/ncurses++.pc
+	ln -s ncursesw.pc	$O/usr/lib/pkgconfig/tic.pc
+	ln -s ncursesw.pc	$O/usr/lib/pkgconfig/tinfo.pc
 
 	ln -s libncursesw.so	$O/usr/lib/libncurses.so
 	ln -s libncurses++w.so	$O/usr/lib/libncurses++.so
+	ln -s libncursesw.so	$O/usr/lib/libtic.so
+	ln -s libncursesw.so	$O/usr/lib/libtinfo.so
 
 	$(call done)
 
