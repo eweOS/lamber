@@ -49,6 +49,8 @@ LIBGCRYPT_V	:= 1.11.2
 LIBGCRYPT_FILE	:= libgcrypt-$(LIBGCRYPT_V).tar.bz2
 LIBGPG_ERR_V	:= 1.55
 LIBGPG_ERR_FILE	:= libgpg-error-$(LIBGPG_ERR_V).tar.bz2
+LIBKSBA_V	:= 1.6.7
+LIBKSBA_FILE	:= libksba-$(LIBKSBA_V).tar.bz2
 LIBTOOL_V	:= 2.5.4
 LIBTOOL_FILE	:= libtool-$(LIBTOOL_V).tar.gz
 # This is actually libudev-zero
@@ -148,6 +150,7 @@ LIBEDIT_URL	:= https://thrysoee.dk/editline/$(LIBEDIT_FILE)
 LIBFFI_URL	:= https://github.com/libffi/libffi/releases/download/v$(LIBFFI_V)/$(LIBFFI_FILE)
 LIBGCRYPT_URL	:= https://www.gnupg.org/ftp/gcrypt/libgcrypt/$(LIBGCRYPT_FILE)
 LIBGPG_ERR_URL	:= https://www.gnupg.org/ftp/gcrypt/libgpg-error/$(LIBGPG_ERR_FILE)
+LIBKSBA_URL	:= https://www.gnupg.org/ftp/gcrypt/libksba/$(LIBKSBA_FILE)
 LIBTOOL_URL	:= https://ftpmirror.gnu.org/libtool/$(LIBTOOL_FILE)
 LIBUDEV_URL	:= https://github.com/illiliti/libudev-zero/archive/$(LIBUDEV_COMMIT).tar.gz
 LINUX_URL	:= https://cdn.kernel.org/pub/linux/kernel/v6.x/$(LINUX_FILE)
