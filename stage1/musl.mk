@@ -28,4 +28,7 @@ $W/stage1.musl-lib: $W/stage1.musl-headers $W/stage1.compiler-rt
 	+ $(call s1) make -C $W/musl-$(MUSL_V)
 	+ $(call s1) make -C $W/musl-$(MUSL_V) install DESTDIR=$O
 
+	mkdir -p $O/usr/bin/ldd
+	ln -s /usr/lib/libc.so $O/usr/bin/ldd
+
 	$(call done)
