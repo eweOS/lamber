@@ -15,4 +15,6 @@ $W/stage2.slibtool: $W/stage2.libtool $W/stage2.slibtool.extract
 	+ make -C $W/slibtool-$(SLIBTOOL_V)
 	+ make -C $W/slibtool-$(SLIBTOOL_V) install
 
+	ln -s slibtoolize /usr/bin/libtoolize
+
 	$(call done)
