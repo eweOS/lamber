@@ -43,6 +43,8 @@ LIBEDIT_V	:= 20250104-3.1
 LIBEDIT_FILE	:= libedit-$(LIBEDIT_V).tar.gz
 LIBFFI_V	:= 3.5.2
 LIBFFI_FILE	:= libffi-$(LIBFFI_V).tar.gz
+LIBGPG_ERR_V	:= 1.55
+LIBGPG_ERR_FILE	:= libgpg-error-$(LIBGPG_ERR_V).tar.bz2
 LIBTOOL_V	:= 2.5.4
 LIBTOOL_FILE	:= libtool-$(LIBTOOL_V).tar.gz
 # This is actually libudev-zero
@@ -139,6 +141,7 @@ LIBBZ2_URL	:= https://gitlab.com/bzip2/bzip2/-/archive/$(LIBBZ2_COMMIT)/bzip2-$(
 LIBCAP_URL	:= https://kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-$(LIBCAP_V).tar.xz
 LIBEDIT_URL	:= https://thrysoee.dk/editline/$(LIBEDIT_FILE)
 LIBFFI_URL	:= https://github.com/libffi/libffi/releases/download/v$(LIBFFI_V)/$(LIBFFI_FILE)
+LIBGPG_ERR_URL	:= https://www.gnupg.org/ftp/gcrypt/libgpg-error/$(LIBGPG_ERR_FILE)
 LIBTOOL_URL	:= https://ftpmirror.gnu.org/libtool/$(LIBTOOL_FILE)
 LIBUDEV_URL	:= https://github.com/illiliti/libudev-zero/archive/$(LIBUDEV_COMMIT).tar.gz
 LINUX_URL	:= https://cdn.kernel.org/pub/linux/kernel/v6.x/$(LINUX_FILE)
