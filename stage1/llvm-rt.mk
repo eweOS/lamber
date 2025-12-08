@@ -2,7 +2,8 @@ $W/stage1.llvm.extract: $W/stage0.llvm.extract
 	$(call done)
 
 $W/stage1.compiler-rt: \
-	$W/stage1.llvm.extract $W/cmake-conf.cmake $W/stage1.musl-headers
+	$W/stage1.llvm.extract $W/cmake-conf.cmake $W/stage1.musl-headers \
+	$W/stage1.linux-uapi-headers
 
 	$(call s1) cmake -S $W/llvm-project-llvmorg-$(LLVM_V)/compiler-rt/ \
 		-B $W/compiler-rt-build -G Ninja		\
