@@ -24,7 +24,6 @@ $W/stage1.llvm: $W/stage1.llvm.extract $W/stage1.binutils.extract \
 		-DLLVM_HOST_TRIPLE=$(CHOST)			\
 		-DCLANG_DEFAULT_CXX_STDLIB='libc++'		\
 		-DCLANG_DEFAULT_RTLIB='compiler-rt'		\
-		-DCLANG_DEFAULT_LINKER='lld'			\
 		-DCLANG_CONFIG_FILE_SYSTEM_DIR=/etc/clang	\
 		-DLLVM_INSTALL_UTILS=ON				\
 		-DLLVM_ENABLE_LIBCXX=ON				\
