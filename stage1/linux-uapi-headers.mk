@@ -12,8 +12,8 @@ $W/stage1.linux-uapi-headers.extract: $W/stage0 $W/LINUX.download
 
 $W/stage1.linux-uapi-headers: \
 	$W/stage1.linux-uapi-headers.extract $W/stage1.c-runtime
-	+ $(call s1) make -C $W/linux-$(LINUX_V) headers_install \
-		LLVM=1 LLVM_IAS=1 ARCH=$(LINUXARCH)		\
-		INSTALL_HDR_PATH=$O/usr
+	+ make -C $W/linux-$(LINUX_V) headers_install \
+		ARCH=$(LINUXARCH) INSTALL_HDR_PATH=$O/usr \
+		HOSTCC=clang HOSTLD=clang
 
 	$(call done)
