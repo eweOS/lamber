@@ -22,7 +22,7 @@ MAKEPKG_CFLAGS_x86_64		+= -fstack-clash-protection -fcf-protection
 MAKEPKG_CFLAGS_aarch64		:= -fno-plt -march=armv8-a
 MAKEPKG_CFLAGS_riscv64		:= -march=rv64gc
 MAKEPKG_CFLAGS_loongarch64	:= -march=la64v1.0
-MAKEPKG_CFLAGS	:= -Os -pipe $(MAKEPKG_FLAGS_$(CARCH))
+MAKEPKG_CFLAGS	:= -Os -pipe $(MAKEPKG_CFLAGS_$(CARCH))
 
 MAKEPKG_LTO_x86_64	:= lto
 MAKEPKG_LTO_aarch64	:= lto
@@ -32,11 +32,11 @@ MAKEPKG_LTO	:= $(MAKEPKG_LTO_$(CARCH))
 
 MAKEPKG_RUSTARCH_x86_64		:= x86_64
 MAKEPKG_RUSTARCH_aarch64	:= aarch64
-MAKEPKG_RUSTARCH_riscv64	:= rv64gc
+MAKEPKG_RUSTARCH_riscv64	:= riscv64gc
 MAKEPKG_RUSTARCH_loongarch64	:= loongarch64
 MAKEPKG_RUSTARCH	:= $(MAKEPKG_RUSTARCH_$(CARCH))
 
-$W/stage2.pacman: $W/stage2.pacman.extract $W/stage2.base-devel \
+$W/stage2.pacman: $W/stage2.pacman.patch $W/stage2.base-devel \
 	$W/stage2.meson $W/stage2.ninja $W/stage2.gpgme		\
 	$(SRCDIR)/stage2/pacman-function_dinit.sh		\
 	$(SRCDIR)/stage2/pacman-function_license.sh		\
