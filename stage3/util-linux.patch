@@ -1,0 +1,13 @@
+diff --git a/PKGBUILD b/PKGBUILD
+index a914459c..8492a950 100644
+--- a/PKGBUILD
++++ b/PKGBUILD
+@@ -74,6 +74,8 @@ build() {
+     -Dbuild-newgrp=enabled
+     -Dbuild-vipw=enabled
+     -Dbuild-write=enabled
++
++    -Dbuild-bash-completion=disabled
+   )
+   # We need -Wl,--as-needed to avoid overlinking, i.e., executables that don't
+   # make use of UTMP functions get linked to libutmps.so. -Wl,--as-needed is
