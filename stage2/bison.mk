@@ -3,7 +3,7 @@ $W/stage2.bison.extract: $W/BISON.download
 
 	$(call done)
 
-$W/stage2.bison: $W/stage2.bison.extract
+$W/stage2.bison: $W/stage2.bison.extract $W/stage2.m4
 	cd $W/bison-$(BISON_V) && ./configure --prefix=/usr \
 		--datadir=/usr/share
 
