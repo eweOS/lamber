@@ -19,3 +19,5 @@ $W/stage2: \
 	$W/stage2.libudev-zero $W/stage2.lz4 $W/stage2.npth		\
 	$W/stage2.pam $W/stage2.pinentry $W/stage2.skalibs		\
 	$W/stage2.util-linux $W/stage2.utmps $W/stage2.base-devel
+
+	$(call done)
