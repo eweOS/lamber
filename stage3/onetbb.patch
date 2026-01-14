@@ -1,0 +1,24 @@
+diff --git a/PKGBUILD b/PKGBUILD
+index 21e17a96..c42018d8 100644
+--- a/PKGBUILD
++++ b/PKGBUILD
+@@ -26,11 +26,9 @@ prepare() {
+ 
+ build() {
+   cmake -B build -S oneTBB-$pkgver -GNinja \
+-          -DTBB4PY_BUILD=ON \
+ 	  -DTBB_TEST=OFF \
+           -DCMAKE_INSTALL_PREFIX=/usr \
+           -DTBB_STRICT=OFF \
+-          -DTBB4PY_BUILD=ON \
+           -DCMAKE_BUILD_TYPE=None
+   cmake --build build
+ }
+@@ -43,7 +41,4 @@ check() {
+ 
+ package() {
+   DESTDIR="$pkgdir" cmake --install build
+-  rm -r "$pkgdir"/usr/lib/python*
+-  cd oneTBB-$pkgver/python
+-  TBBROOT="$pkgdir"/usr python setup.py install --root="$pkgdir"
+ }
