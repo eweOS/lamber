@@ -1,5 +1,5 @@
 LINUXARCH_x86_64	:= x86_64
-LINUXARCH_aarch64	:= aarch64
+LINUXARCH_aarch64	:= arm64
 LINUXARCH_riscv64	:= riscv
 LINUXARCH_loongarch64	:= loongarch
 
