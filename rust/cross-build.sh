@@ -41,6 +41,7 @@ error() {
 
 buildarch="$(uname -m)"
 hostarch="$1"
+hostcarch="$1"
 case "$hostarch" in
 x86_64|aarch64|loongarch64)
 	;;
@@ -83,14 +84,14 @@ progress "Generating Clang wrappers for host rootfs"
 cat <<EOF > clang-host
 #!/usr/bin/env bash
 exec clang --sysroot "$rootfs" 				\
-	-target $hostarch-unknown-linux-musl		\
+	-target $hostcarch-unknown-linux-musl		\
 	-resource-dir="$rootfs/$(clang -print-resource-dir)" "\$@"
 EOF
 
 cat <<EOF > clangxx-host
 #!/usr/bin/env bash
 exec clang++ --sysroot "$rootfs" 				\
-	-target $hostarch-unknown-linux-musl			\
+	-target $hostcarch-unknown-linux-musl			\
 	-nostdinc++ -isystem "$rootfs/usr/include/c++/v1"	\
 	-resource-dir="$rootfs/$(clang -print-resource-dir)" "\$@"
 EOF
@@ -115,7 +116,7 @@ progress "Generate llvm-config wrappers for host LLVM"
 cat <<EOF > llvm-config-host
 #!/usr/bin/env bash
 
-hostconfig="$(arch2qemu "$hostarch") -L $rootfs $rootfs/usr/bin/llvm-config"
+hostconfig="$(arch2qemu "$hostcarch") -L $rootfs $rootfs/usr/bin/llvm-config"
 \$hostconfig "\$@"
 EOF
 
@@ -135,7 +136,7 @@ arch2llvm() {
 }
 
 buildllvmarch="$(arch2llvm $buildarch)"
-hostllvmarch="$(arch2llvm $hostarch)"
+hostllvmarch="$(arch2llvm $hostcarch)"
 
 progress "Generating Rust config.toml configuration"
 
@@ -238,7 +239,7 @@ DESTDIR="$PWD/install" python "rustc-$rustver-src"/x.py install -j$JOBS ||
 	exit 1
 
 progress "Collecting toolchain tarball"
-tar --uid 0 --gid 0 --zstd -cf "rustc-$rustver-$hostarch.tar.zst" \
+tar --uid 0 --gid 0 --zstd -cf "rustc-$rustver-$hostcarch.tar.zst" \
 	-C install . || exit 1
 
 ls -lh *.tar.zst
